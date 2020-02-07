@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pulse Effect on Click | CSS, Javascript</title>
+  </head>
+  <body>
+    <script>
+      var pulse = function() {
+        var e = document.createElement("div");
+        e.setAttribute("class", "circle"),
+          document.body.appendChild(e),
+          (e.style.top = event.pageY + "px"),
+          (e.style.left = event.pageX + "px"),
+          setTimeout(function() {
+            document.body.removeChild(e);
+          }, 1000);
+      };
+      document.addEventListener("click", pulse);
+    </script>
+  </body>
+</html>
